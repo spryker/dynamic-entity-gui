@@ -26,15 +26,18 @@
 
                 {% block form_errors %}
                     {% if errors is defined %}
-                    {% if errors|length > 0 %}
-                        <div class="alert alert-danger">
-                            <ul class="list-unstyled">
-                                {%- for error in errors -%}
-                                    <li><span class="glyphicon glyphicon-exclamation-sign"></span> {{ error.message | trans }}</li>
-                                {%- endfor -%}
-                            </ul>
-                        </div>
-                    {% endif %}{% endif %}
+                        {% if errors|length > 0 %}
+                            <div class="alert alert-danger">
+                                <ul class="list-unstyled">
+                                    {%- for error in errors -%}
+                                        <li>
+                                            <span class="fa fa-exclamation-circle"></span>
+                                            {{ error.message | trans }}</li>
+                                    {%- endfor -%}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    {% endif %}
                 {% endblock %}
 
                 <div class="de-edit-table-errors">
@@ -65,26 +68,26 @@
                     </thead>
                     <tbody>
 
-                    {% for rowForm in form.field_definitions %}
-                        <tr>
-                            <td>{{ form_row(rowForm.is_enabled) }}</td>
-                            <td>{{ form_row(rowForm.field_name) }}</td>
-                            <td>{{ form_row(rowForm.field_visible_name) }}</td>
-                            <td>{{ form_row(rowForm.type) }}</td>
-                            <td>{{ form_row(rowForm.is_creatable) }}</td>
-                            <td>{{ form_row(rowForm.is_editable) }}</td>
-                            <td>{{ form_row(rowForm.is_required) }}</td>
-                            <td>{{ form_row(rowForm.description) }}</td>
-                            <td>{{ form_row(rowForm.examples) }}</td>
-                            <td>{{ form_row(rowForm.enum_values) }}</td>
-                            <td class="de-edit-table-no-padding">{{ form_row(rowForm.min) }}</td>
-                            <td class="de-edit-table-no-padding">{{ form_row(rowForm.max) }}</td>
-                            <td class="de-edit-table-no-padding">{{ form_row(rowForm.min_length) }}</td>
-                            <td class="de-edit-table-no-padding">{{ form_row(rowForm.max_length) }}</td>
-                            <td class="de-edit-table-no-padding">{{ form_row(rowForm.scale) }}</td>
-                            <td class="de-edit-table-no-padding">{{ form_row(rowForm.precision) }}</td>
-                        </tr>
-                    {% endfor %}
+                        {% for rowForm in form.field_definitions %}
+                            <tr>
+                                <td>{{ form_row(rowForm.is_enabled) }}</td>
+                                <td>{{ form_row(rowForm.field_name) }}</td>
+                                <td>{{ form_row(rowForm.field_visible_name) }}</td>
+                                <td>{{ form_row(rowForm.type) }}</td>
+                                <td>{{ form_row(rowForm.is_creatable) }}</td>
+                                <td>{{ form_row(rowForm.is_editable) }}</td>
+                                <td>{{ form_row(rowForm.is_required) }}</td>
+                                <td>{{ form_row(rowForm.description) }}</td>
+                                <td>{{ form_row(rowForm.examples) }}</td>
+                                <td>{{ form_row(rowForm.enum_values) }}</td>
+                                <td class="de-edit-table-no-padding">{{ form_row(rowForm.min) }}</td>
+                                <td class="de-edit-table-no-padding">{{ form_row(rowForm.max) }}</td>
+                                <td class="de-edit-table-no-padding">{{ form_row(rowForm.min_length) }}</td>
+                                <td class="de-edit-table-no-padding">{{ form_row(rowForm.max_length) }}</td>
+                                <td class="de-edit-table-no-padding">{{ form_row(rowForm.scale) }}</td>
+                                <td class="de-edit-table-no-padding">{{ form_row(rowForm.precision) }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
 
