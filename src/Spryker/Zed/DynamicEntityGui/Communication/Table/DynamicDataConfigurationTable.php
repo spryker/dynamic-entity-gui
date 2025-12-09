@@ -194,7 +194,7 @@ class DynamicDataConfigurationTable extends AbstractTable
             return $this->generateLabel('Inactive', 'label-danger');
         }
 
-        return $this->generateLabel('Active', 'label-success');
+        return $this->generateLabel('Active', 'label-primary');
     }
 
     /**
