@@ -9,7 +9,7 @@
 
 {% block content %}
     {% if isSchemaFileActual == false %}
-        <div class="alert alert-info">
+        <div class="alert alert-info" data-qa="alert-documentation-generation-in-progress">
             <i class="alert__icon fa fas fa-cogs" aria-hidden="true"></i>
             <div class="alert__text">
                 {{ 'Documentation generation is in progress, please refresh the page in %s minute(s).' | format(updateTimeInMinutes) | trans }}
