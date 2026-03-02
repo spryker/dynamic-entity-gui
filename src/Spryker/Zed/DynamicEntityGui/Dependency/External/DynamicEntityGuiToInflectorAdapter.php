@@ -11,11 +11,6 @@ use Doctrine\Inflector\InflectorFactory;
 
 class DynamicEntityGuiToInflectorAdapter implements DynamicEntityGuiToInflectorInterface
 {
-    /**
-     * @param string $word
-     *
-     * @return string
-     */
     public function pluralize(string $word): string
     {
         $inflector = InflectorFactory::create()->build();

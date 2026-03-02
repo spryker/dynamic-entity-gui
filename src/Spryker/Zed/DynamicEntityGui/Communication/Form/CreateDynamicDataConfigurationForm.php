@@ -38,19 +38,11 @@ class CreateDynamicDataConfigurationForm extends AbstractType
      */
     protected const CHOICE_TABLE_NAME = 'tableName';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'dynamic-entity';
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

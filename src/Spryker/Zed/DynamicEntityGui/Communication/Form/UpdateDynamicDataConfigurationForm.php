@@ -98,19 +98,11 @@ class UpdateDynamicDataConfigurationForm extends AbstractType
      */
     protected const VALIDATION_REGEX = '/^[a-zA-Z0-9_-]+$/';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'dynamic-entity';
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -228,9 +220,6 @@ class UpdateDynamicDataConfigurationForm extends AbstractType
         return $this;
     }
 
-    /**
-     * @return \Symfony\Component\Validator\Constraint
-     */
     protected function createTableAliasRegexConstraint(): Constraint
     {
         return new Regex([

@@ -41,11 +41,6 @@ class OpenApiSchemaChecker implements OpenApiSchemaCheckerInterface
      */
     protected DynamicEntityGuiToStorageFacadeInterface $storageFacade;
 
-    /**
-     * @param \Spryker\Zed\DynamicEntityGui\DynamicEntityGuiConfig $config
-     * @param \Spryker\Zed\DynamicEntityGui\Dependency\Facade\DynamicEntityGuiToDynamicEntityFacadeInterface $dynamicEntityFacade
-     * @param \Spryker\Zed\DynamicEntityGui\Dependency\Facade\DynamicEntityGuiToStorageFacadeInterface $storageFacade
-     */
     public function __construct(
         DynamicEntityGuiConfig $config,
         DynamicEntityGuiToDynamicEntityFacadeInterface $dynamicEntityFacade,
@@ -56,9 +51,6 @@ class OpenApiSchemaChecker implements OpenApiSchemaCheckerInterface
         $this->storageFacade = $storageFacade;
     }
 
-    /**
-     * @return bool
-     */
     public function isSchemaFileActual(): bool
     {
         $backendApiSchemaStorageKey = $this->config->getBackendApiSchemaStorageKey();
@@ -71,11 +63,6 @@ class OpenApiSchemaChecker implements OpenApiSchemaCheckerInterface
         return !$this->hasUpdatedConfigurations($schemaData[static::CREATED_AT]);
     }
 
-    /**
-     * @param int $time
-     *
-     * @return bool
-     */
     protected function hasUpdatedConfigurations(int $time): bool
     {
         $dynamicEntityConfigurationCriteriaTransfer = (new DynamicEntityConfigurationCriteriaTransfer())->setDynamicEntityConfigurationConditions(

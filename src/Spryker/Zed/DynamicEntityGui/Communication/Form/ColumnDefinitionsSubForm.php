@@ -96,9 +96,6 @@ class ColumnDefinitionsSubForm extends AbstractType
      */
     protected const FIELD_PRECISION = 'precision';
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'dynamic-entity';

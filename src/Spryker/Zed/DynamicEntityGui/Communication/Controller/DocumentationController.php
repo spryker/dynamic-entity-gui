@@ -15,9 +15,6 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
  */
 class DocumentationController extends AbstractController
 {
-    /**
-     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
-     */
     public function downloadAction(): BinaryFileResponse
     {
         return $this->getFactory()->createSchemaFileResponseBuilder()->createResponse();

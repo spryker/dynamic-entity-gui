@@ -9,24 +9,9 @@ namespace Spryker\Zed\DynamicEntityGui\Communication\Validator;
 
 interface TableValidatorInterface
 {
-    /**
-     * @param string $table
-     *
-     * @return bool
-     */
     public function validateIsTableDisallowed(string $table): bool;
 
-    /**
-     * @param string $table
-     *
-     * @return bool
-     */
     public function validateIsTableConfigured(string $table): bool;
 
-    /**
-     * @param string $table
-     *
-     * @return bool
-     */
     public function validateIsTableExist(string $table): bool;
 }

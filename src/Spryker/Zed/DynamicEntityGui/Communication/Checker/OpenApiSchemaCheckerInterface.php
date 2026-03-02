@@ -9,8 +9,5 @@ namespace Spryker\Zed\DynamicEntityGui\Communication\Checker;
 
 interface OpenApiSchemaCheckerInterface
 {
-    /**
-     * @return bool
-     */
     public function isSchemaFileActual(): bool;
 }

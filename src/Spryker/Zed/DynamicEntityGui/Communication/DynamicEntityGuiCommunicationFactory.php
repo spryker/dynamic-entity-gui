@@ -34,9 +34,6 @@ use Symfony\Component\Form\FormInterface;
  */
 class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Communication\Table\DynamicDataConfigurationTable
-     */
     public function createDynamicDataConfigurationTable(): DynamicDataConfigurationTable
     {
         return new DynamicDataConfigurationTable(
@@ -44,9 +41,6 @@ class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Orm\Zed\DynamicEntity\Persistence\SpyDynamicEntityConfigurationQuery
-     */
     public function getDynamicEntityPropelQuery(): SpyDynamicEntityConfigurationQuery
     {
         return $this->getProvidedDependency(DynamicEntityGuiDependencyProvider::PROPEL_QUERY_DYNAMIC_ENTITY);
@@ -73,9 +67,6 @@ class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
         return $this->getFormFactory()->create(UpdateDynamicDataConfigurationForm::class, $dynamicDataConfiguration, $options);
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Communication\Form\DataProvider\CreateDynamicDataConfigurationFormDataProvider
-     */
     public function createDynamicDataConfigurationFormDataProvider(): CreateDynamicDataConfigurationFormDataProvider
     {
         return new CreateDynamicDataConfigurationFormDataProvider(
@@ -84,9 +75,6 @@ class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Communication\Form\DataProvider\UpdateDynamicDataConfigurationFormDataProvider
-     */
     public function createUpdateDynamicDataConfigurationFormDataProvider(): UpdateDynamicDataConfigurationFormDataProvider
     {
         return new UpdateDynamicDataConfigurationFormDataProvider(
@@ -96,9 +84,6 @@ class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Communication\Validator\TableValidatorInterface
-     */
     public function createTableValidator(): TableValidatorInterface
     {
         return new TableValidator(
@@ -107,25 +92,16 @@ class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Dependency\Facade\DynamicEntityGuiToDynamicEntityFacadeInterface
-     */
     public function getDynamicEntityFacade(): DynamicEntityGuiToDynamicEntityFacadeInterface
     {
         return $this->getProvidedDependency(DynamicEntityGuiDependencyProvider::FACADE_DYNAMIC_ENTITY);
     }
 
-    /**
-     * @return \Propel\Runtime\Map\DatabaseMap
-     */
     public function getPropelDatabaseMap(): DatabaseMap
     {
         return Propel::getDatabaseMap();
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Communication\Mapper\DynamicDataConfigurationMapper
-     */
     public function createDynamicDataConfigurationMapper(): DynamicDataConfigurationMapper
     {
         return new DynamicDataConfigurationMapper(
@@ -134,17 +110,11 @@ class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Dependency\External\DynamicEntityGuiToInflectorInterface
-     */
     public function getInflector(): DynamicEntityGuiToInflectorInterface
     {
         return $this->getProvidedDependency(DynamicEntityGuiDependencyProvider::INFLECTOR);
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Communication\Checker\OpenApiSchemaCheckerInterface
-     */
     public function createOpenApiSchemaChecker(): OpenApiSchemaCheckerInterface
     {
         return new OpenApiSchemaChecker(
@@ -154,17 +124,11 @@ class DynamicEntityGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Dependency\Facade\DynamicEntityGuiToStorageFacadeInterface
-     */
     public function getStorageFacade(): DynamicEntityGuiToStorageFacadeInterface
     {
         return $this->getProvidedDependency(DynamicEntityGuiDependencyProvider::FACADE_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Zed\DynamicEntityGui\Communication\Response\SchemaFileResponse\SchemaFileResponseBuilderInterface
-     */
     public function createSchemaFileResponseBuilder(): SchemaFileResponseBuilderInterface
     {
         return new SchemaFileResponseBuilder(

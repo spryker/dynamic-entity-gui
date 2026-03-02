@@ -76,19 +76,11 @@ class DynamicDataConfigurationTable extends AbstractTable
      */
     protected SpyDynamicEntityConfigurationQuery $dynamicEntityConfigurationQuery;
 
-    /**
-     * @param \Orm\Zed\DynamicEntity\Persistence\SpyDynamicEntityConfigurationQuery $dynamicEntityConfigurationQuery
-     */
     public function __construct(SpyDynamicEntityConfigurationQuery $dynamicEntityConfigurationQuery)
     {
         $this->dynamicEntityConfigurationQuery = $dynamicEntityConfigurationQuery;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $this->setHeader($config);
@@ -101,11 +93,6 @@ class DynamicDataConfigurationTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return void
-     */
     protected function setHeader(TableConfiguration $config): void
     {
         $config->setHeader([
@@ -117,11 +104,6 @@ class DynamicDataConfigurationTable extends AbstractTable
         ]);
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return void
-     */
     protected function setSearchable(TableConfiguration $config): void
     {
         $config->setSearchable([
@@ -131,11 +113,6 @@ class DynamicDataConfigurationTable extends AbstractTable
         ]);
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return void
-     */
     protected function setRawColumns(TableConfiguration $config): void
     {
         $config->setRawColumns([
@@ -183,11 +160,6 @@ class DynamicDataConfigurationTable extends AbstractTable
         ];
     }
 
-    /**
-     * @param bool $isActive
-     *
-     * @return string
-     */
     protected function getStatusLabel(bool $isActive): string
     {
         if (!$isActive) {
@@ -197,9 +169,6 @@ class DynamicDataConfigurationTable extends AbstractTable
         return $this->generateLabel('Active', 'label-primary');
     }
 
-    /**
-     * @return void
-     */
     protected function prepareQuery(): void
     {
         $this->dynamicEntityConfigurationQuery
@@ -207,11 +176,6 @@ class DynamicDataConfigurationTable extends AbstractTable
             ->orderBy(static::COL_TABLE_NAME, TableConfiguration::SORT_ASC);
     }
 
-    /**
-     * @param string $tableName
-     *
-     * @return string
-     */
     protected function createEditUrl(string $tableName): string
     {
         return Url::generate(

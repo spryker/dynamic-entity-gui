@@ -20,11 +20,6 @@ use Spryker\Zed\DynamicEntityGui\Dependency\Facade\DynamicEntityGuiToDynamicEnti
 
 class UpdateDynamicDataConfigurationFormDataProvider
 {
-    /**
-     * @param \Spryker\Zed\DynamicEntityGui\Dependency\Facade\DynamicEntityGuiToDynamicEntityFacadeInterface $dynamicEntityFacade
-     * @param \Propel\Runtime\Map\DatabaseMap $databaseMap
-     * @param \Spryker\Zed\DynamicEntityGui\Communication\Validator\TableValidatorInterface $tableValidator
-     */
     public function __construct(
         protected DynamicEntityGuiToDynamicEntityFacadeInterface $dynamicEntityFacade,
         protected DatabaseMap $databaseMap,
@@ -85,11 +80,6 @@ class UpdateDynamicDataConfigurationFormDataProvider
             ->getDynamicEntityConfigurations();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DynamicEntityConfigurationTransfer $dynamicEntityConfigurationTransfer
-     *
-     * @return array
-     */
     protected function mapDynamicEntityConfigurationsToData(
         DynamicEntityConfigurationTransfer $dynamicEntityConfigurationTransfer
     ): array {

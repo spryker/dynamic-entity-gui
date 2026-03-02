@@ -131,12 +131,6 @@ class ConfigurationEditController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $dynamicDataConfigurationForm
-     * @param \Generated\Shared\Transfer\DynamicEntityConfigurationCollectionResponseTransfer $dynamicEntityConfigurationCollectionResponseTransfer
-     *
-     * @return \Symfony\Component\Form\FormInterface
-     */
     protected function mapErrorsToForm(
         FormInterface $dynamicDataConfigurationForm,
         DynamicEntityConfigurationCollectionResponseTransfer $dynamicEntityConfigurationCollectionResponseTransfer
@@ -154,12 +148,6 @@ class ConfigurationEditController extends AbstractController
         return $dynamicDataConfigurationForm;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $dynamicDataConfigurationForm
-     * @param \Generated\Shared\Transfer\ErrorTransfer $errorTransfer
-     *
-     * @return bool
-     */
     protected function addFormErrorToFieldDefinitionForm(FormInterface $dynamicDataConfigurationForm, ErrorTransfer $errorTransfer): bool
     {
         $fieldDefinitionsForms = $dynamicDataConfigurationForm->get(static::KEY_FIELD_DEFINITIONS)->all();
@@ -180,11 +168,6 @@ class ConfigurationEditController extends AbstractController
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ErrorTransfer $errorTransfer
-     *
-     * @return \Symfony\Component\Form\FormError
-     */
     protected function mapFormErrorTransferToFormError(ErrorTransfer $errorTransfer): FormError
     {
         $errorMessage = sprintf(

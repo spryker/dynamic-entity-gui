@@ -27,11 +27,6 @@ class DynamicEntityGuiToDynamicEntityFacadeBridge implements DynamicEntityGuiToD
         $this->dynamicEntityFacade = $dynamicEntityFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DynamicEntityConfigurationCriteriaTransfer $dynamicEntityConfigurationCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\DynamicEntityConfigurationCollectionTransfer
-     */
     public function getDynamicEntityConfigurationCollection(
         DynamicEntityConfigurationCriteriaTransfer $dynamicEntityConfigurationCriteriaTransfer
     ): DynamicEntityConfigurationCollectionTransfer {
@@ -46,22 +41,12 @@ class DynamicEntityGuiToDynamicEntityFacadeBridge implements DynamicEntityGuiToD
         return $this->dynamicEntityFacade->getDisallowedTables();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DynamicEntityConfigurationCollectionRequestTransfer $dynamicEntityConfigurationCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\DynamicEntityConfigurationCollectionResponseTransfer
-     */
     public function updateDynamicEntityConfigurationCollection(
         DynamicEntityConfigurationCollectionRequestTransfer $dynamicEntityConfigurationCollectionTransfer
     ): DynamicEntityConfigurationCollectionResponseTransfer {
         return $this->dynamicEntityFacade->updateDynamicEntityConfigurationCollection($dynamicEntityConfigurationCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DynamicEntityConfigurationCollectionRequestTransfer $dynamicEntityConfigurationCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\DynamicEntityConfigurationCollectionResponseTransfer
-     */
     public function createDynamicEntityConfigurationCollection(
         DynamicEntityConfigurationCollectionRequestTransfer $dynamicEntityConfigurationCollectionTransfer
     ): DynamicEntityConfigurationCollectionResponseTransfer {

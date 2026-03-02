@@ -33,10 +33,6 @@ class DynamicDataConfigurationMapper
      */
     protected DynamicEntityGuiToInflectorInterface $inflector;
 
-    /**
-     * @param \Spryker\Zed\DynamicEntityGui\DynamicEntityGuiConfig $config
-     * @param \Spryker\Zed\DynamicEntityGui\Dependency\External\DynamicEntityGuiToInflectorInterface $inflector
-     */
     public function __construct(
         DynamicEntityGuiConfig $config,
         DynamicEntityGuiToInflectorInterface $inflector
@@ -75,11 +71,6 @@ class DynamicDataConfigurationMapper
             ->addDynamicEntityConfiguration($dynamicEntityConfigurationTransfer);
     }
 
-    /**
-     * @param string $tableName
-     *
-     * @return \Generated\Shared\Transfer\DynamicEntityConfigurationCollectionRequestTransfer
-     */
     public function mapInitialConfigurationDataToCollectionRequestTransfer(string $tableName): DynamicEntityConfigurationCollectionRequestTransfer
     {
         return (new DynamicEntityConfigurationCollectionRequestTransfer())
@@ -111,11 +102,6 @@ class DynamicDataConfigurationMapper
         return $fieldDefinitionTransfer;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return string
-     */
     protected function normalizeTableAlias(string $name): string
     {
         foreach ($this->config->getTablePrefixes() as $prefix) {
@@ -129,11 +115,6 @@ class DynamicDataConfigurationMapper
         return $this->inflector->pluralize($this->convertUnderscoresToDashes($name));
     }
 
-    /**
-     * @param string $string
-     *
-     * @return string
-     */
     protected function convertUnderscoresToDashes(string $string): string
     {
         return str_replace('_', '-', $string);

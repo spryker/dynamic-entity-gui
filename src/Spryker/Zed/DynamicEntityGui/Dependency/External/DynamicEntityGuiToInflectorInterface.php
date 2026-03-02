@@ -9,10 +9,5 @@ namespace Spryker\Zed\DynamicEntityGui\Dependency\External;
 
 interface DynamicEntityGuiToInflectorInterface
 {
-    /**
-     * @param string $word
-     *
-     * @return string
-     */
     public function pluralize(string $word): string;
 }

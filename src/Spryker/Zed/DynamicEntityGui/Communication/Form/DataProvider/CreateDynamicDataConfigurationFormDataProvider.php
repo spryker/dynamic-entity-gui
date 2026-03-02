@@ -24,10 +24,6 @@ class CreateDynamicDataConfigurationFormDataProvider
      */
     protected TableValidatorInterface $tableValidator;
 
-    /**
-     * @param \Propel\Runtime\Map\DatabaseMap $databaseMap
-     * @param \Spryker\Zed\DynamicEntityGui\Communication\Validator\TableValidatorInterface $tableValidator
-     */
     public function __construct(
         DatabaseMap $databaseMap,
         TableValidatorInterface $tableValidator

@@ -39,19 +39,12 @@ class SchemaFileResponseBuilder implements SchemaFileResponseBuilderInterface
      */
     protected const CONTENT_DISPOSITION_HEADER_VALUE = 'attachment; filename=%s';
 
-    /**
-     * @param \Spryker\Zed\DynamicEntityGui\DynamicEntityGuiConfig $config
-     * @param \Spryker\Zed\DynamicEntityGui\Dependency\Facade\DynamicEntityGuiToStorageFacadeInterface $storageFacade
-     */
     public function __construct(
         protected DynamicEntityGuiConfig $config,
         protected DynamicEntityGuiToStorageFacadeInterface $storageFacade
     ) {
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
-     */
     public function createResponse(): BinaryFileResponse
     {
         $backendApiSchemaStorageKey = $this->config->getBackendApiSchemaStorageKey();

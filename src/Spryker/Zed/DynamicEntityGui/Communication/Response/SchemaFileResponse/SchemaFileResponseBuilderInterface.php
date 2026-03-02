@@ -11,8 +11,5 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 interface SchemaFileResponseBuilderInterface
 {
-    /**
-     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
-     */
     public function createResponse(): BinaryFileResponse;
 }

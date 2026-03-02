@@ -31,9 +31,6 @@ class ConfigurationListController extends AbstractController
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableAction(): JsonResponse
     {
         $dynamicDataConfigurationTable = $this->getFactory()->createDynamicDataConfigurationTable();

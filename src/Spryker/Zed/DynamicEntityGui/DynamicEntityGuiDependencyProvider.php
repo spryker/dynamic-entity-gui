@@ -39,11 +39,6 @@ class DynamicEntityGuiDependencyProvider extends AbstractBundleDependencyProvide
      */
     public const FACADE_STORAGE = 'FACADE_STORAGE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -56,11 +51,6 @@ class DynamicEntityGuiDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDynamicEntityPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_DYNAMIC_ENTITY, $container->factory(function () {
@@ -70,11 +60,6 @@ class DynamicEntityGuiDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDynamicEntityFacade(Container $container): Container
     {
         $container->set(static::FACADE_DYNAMIC_ENTITY, function (Container $container) {
@@ -86,11 +71,6 @@ class DynamicEntityGuiDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addInflector(Container $container): Container
     {
         $container->set(static::INFLECTOR, function () {
@@ -100,11 +80,6 @@ class DynamicEntityGuiDependencyProvider extends AbstractBundleDependencyProvide
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStorageFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORAGE, function (Container $container) {
