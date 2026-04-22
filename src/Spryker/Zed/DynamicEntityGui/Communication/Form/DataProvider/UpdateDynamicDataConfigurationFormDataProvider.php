@@ -93,6 +93,11 @@ class UpdateDynamicDataConfigurationFormDataProvider
 
             $fieldDefinition = $fieldDefinitionTransfer->toArray();
 
+            // Normalise null to true here: an unset is_enabled means "not explicitly disabled".
+            if ($fieldDefinition['is_enabled'] === null) {
+                $fieldDefinition['is_enabled'] = true;
+            }
+
             // Flatten the fieldDefinition and validation rules into one array for form rendering
             $fieldDefinitions[] = array_merge($fieldDefinition, $validation);
         }
