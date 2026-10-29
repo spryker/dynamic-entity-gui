@@ -163,7 +163,7 @@ class DynamicDataConfigurationTable extends AbstractTable
     protected function getStatusLabel(bool $isActive): string
     {
         if (!$isActive) {
-            return $this->generateLabel('Inactive', 'label-danger');
+            return $this->generateLabel('Inactive', 'badge-outline-dark');
         }
 
         return $this->generateLabel('Active', 'label-primary');
