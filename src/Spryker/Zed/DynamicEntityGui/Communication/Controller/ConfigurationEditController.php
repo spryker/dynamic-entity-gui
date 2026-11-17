@@ -153,8 +153,6 @@ class ConfigurationEditController extends AbstractController
         $fieldDefinitionsForms = $dynamicDataConfigurationForm->get(static::KEY_FIELD_DEFINITIONS)->all();
         /** @var \Symfony\Component\Form\FormInterface $fieldDefinitionsForm */
         foreach ($fieldDefinitionsForms as $fieldDefinitionsForm) {
-            $data = $fieldDefinitionsForm->getData();
-
             if (
                 isset($fieldDefinitionsForm->getData()[static::KEY_FIELD_NAME]) &&
                 $fieldDefinitionsForm->getData()[static::KEY_FIELD_NAME] === $errorTransfer->getEntityIdentifier()
